@@ -8,8 +8,8 @@
     "temperature": 0.3,
     "max_tokens": 16384,
     "throttle_sec": 0,
-    "analysis_concurrency": 1,
-    "enrichment_concurrency": 1
+    "analysis_concurrency": 8,
+    "enrichment_concurrency": 4
   },
   "email": {
     "enabled": false,
@@ -84,9 +84,9 @@
       { "name": "Wired AI", "url": "https://www.wired.com/feed/tag/ai/latest/rss", "enabled": true, "category": "ai-news" },
       { "name": "The Gradient", "url": "https://thegradient.pub/rss/", "enabled": true, "category": "research" },
       { "name": "BAIR Blog", "url": "https://bair.berkeley.edu/blog/feed.xml", "enabled": true, "category": "research" },
-      { "name": "arXiv cs.AI", "url": "http://export.arxiv.org/rss/cs.AI", "enabled": true, "category": "papers" },
-      { "name": "arXiv cs.CL", "url": "http://export.arxiv.org/rss/cs.CL", "enabled": true, "category": "papers" },
-      { "name": "arXiv cs.LG", "url": "http://export.arxiv.org/rss/cs.LG", "enabled": true, "category": "papers" }
+      { "name": "arXiv cs.AI", "url": "http://export.arxiv.org/rss/cs.AI", "enabled": false, "category": "papers" },
+      { "name": "arXiv cs.CL", "url": "http://export.arxiv.org/rss/cs.CL", "enabled": false, "category": "papers" },
+      { "name": "arXiv cs.LG", "url": "http://export.arxiv.org/rss/cs.LG", "enabled": false, "category": "papers" }
     ],
     "github": [
       { "type": "repo_releases", "owner": "ggerganov", "repo": "llama.cpp", "enabled": true },
