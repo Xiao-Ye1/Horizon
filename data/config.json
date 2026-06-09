@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "ai": {
+    "provider": "openai",
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-v4-pro",
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "temperature": 0.3,
+    "max_tokens": 16384
+  },
+  "sources": {
+    "hackernews": { "enabled": true, "fetch_top_stories": 30, "min_score": 80 },
+    "reddit": {
+      "enabled": true,
+      "subreddits": [
+        { "subreddit": "LocalLLaMA", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 15, "min_score": 40 },
+        { "subreddit": "MachineLearning", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 15, "min_score": 40 },
+        { "subreddit": "artificial", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 10, "min_score": 40 },
+        { "subreddit": "singularity", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 10, "min_score": 50 },
+        { "subreddit": "OpenAI", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 10, "min_score": 30 },
+        { "subreddit": "ChatGPT", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 10, "min_score": 50 }
+      ],
+      "fetch_comments": 5
+    },
+    "ossinsight": {
+      "enabled": true,
+      "period": "past_24_hours",
+      "languages": ["All", "Python", "TypeScript"],
+      "keywords": [],
+      "min_stars": 10,
+      "max_items": 30
+    },
+    "rss": [
+      { "name": "OpenAI", "url": "https://openai.com/news/rss.xml", "enabled": true, "category": "lab" },
+      { "name": "Google DeepMind", "url": "https://deepmind.google/blog/rss.xml", "enabled": true, "category": "lab" },
+      { "name": "Google AI Blog", "url": "https://blog.google/technology/ai/rss/", "enabled": true, "category": "lab" },
+      { "name": "HuggingFace Blog", "url": "https://huggingface.co/blog/feed.xml", "enabled": true, "category": "lab" },
+      { "name": "Microsoft AI Blog", "url": "https://blogs.microsoft.com/ai/feed/", "enabled": true, "category": "lab" },
+      { "name": "AWS Machine Learning", "url": "https://aws.amazon.com/blogs/machine-learning/feed/", "enabled": true, "category": "lab" },
+      { "name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/", "enabled": true, "category": "ai-tools" },
+      { "name": "MIT Tech Review AI", "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed", "enabled": true, "category": "ai-news" },
+      { "name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "enabled": true, "category": "ai-news" },
+      { "name": "VentureBeat AI", "url": "https://venturebeat.com/category/ai/feed/", "enabled": true, "category": "ai-news" },
+      { "name": "The Verge AI", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "enabled": true, "category": "ai-news" },
+      { "name": "Ars Technica AI", "url": "https://arstechnica.com/ai/feed/", "enabled": true, "category": "ai-news" },
+      { "name": "Wired AI", "url": "https://www.wired.com/feed/tag/ai/latest/rss", "enabled": true, "category": "ai-news" },
+      { "name": "The Gradient", "url": "https://thegradient.pub/rss/", "enabled": true, "category": "research" },
+      { "name": "BAIR Blog", "url": "https://bair.berkeley.edu/blog/feed.xml", "enabled": true, "category": "research" },
+      { "name": "arXiv cs.AI", "url": "http://export.arxiv.org/rss/cs.AI", "enabled": true, "category": "papers" },
+      { "name": "arXiv cs.CL", "url": "http://export.arxiv.org/rss/cs.CL", "enabled": true, "category": "papers" },
+      { "name": "arXiv cs.LG", "url": "http://export.arxiv.org/rss/cs.LG", "enabled": true, "category": "papers" }
+    ],
+    "github": [
+      { "type": "repo_releases", "owner": "ggerganov", "repo": "llama.cpp", "enabled": true },
+      { "type": "repo_releases", "owner": "vllm-project", "repo": "vllm", "enabled": true },
+      { "type": "repo_releases", "owner": "ollama", "repo": "ollama", "enabled": true },
+      { "type": "repo_releases", "owner": "langchain-ai", "repo": "langchain", "enabled": true },
+      { "type": "repo_releases", "owner": "huggingface", "repo": "transformers", "enabled": true },
+      { "type": "repo_releases", "owner": "comfyanonymous", "repo": "ComfyUI", "enabled": true },
+      { "type": "repo_releases", "owner": "open-webui", "repo": "open-webui", "enabled": true },
+      { "type": "repo_releases", "owner": "langgenius", "repo": "dify", "enabled": true },
+      { "type": "repo_releases", "owner": "unslothai", "repo": "unsloth", "enabled": true },
+      { "type": "repo_releases", "owner": "pytorch", "repo": "pytorch", "enabled": true }
+    ]
+  },
+  "filtering": {
+    "ai_score_threshold": 6.0,
+    "time_window_hours": 24
+  }
+}
